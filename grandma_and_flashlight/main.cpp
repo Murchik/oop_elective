@@ -1,5 +1,6 @@
-#include <iostream>
+#include <map>
 
+#include "chair.hpp"
 #include "electrician.hpp"
 #include "flashlight.hpp"
 #include "grandma.hpp"
@@ -8,8 +9,13 @@
 int main() {
     flashlight fl;
     chair ch;
-    grandma gm(&fl, &ch);
-    electrician e;
+
+    std::map<ILightable*, IRepairable*> manual;
+    manual[&fl] = &fl;
+
+    electrician e(200, manual);
+
+    grandma gm(&fl, &ch, &e);
 
     LOG("Стало темно");
     gm.turn_on_lights();

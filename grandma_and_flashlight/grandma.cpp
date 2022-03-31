@@ -8,7 +8,7 @@ void grandma::turn_on_lights() {
         LOG("Не удалось включить лампочку");
 
         LOG("Электрик пытается починить лампочку");
-        if (_electrician->repair(dynamic_cast<IRepairable*>(_flashlight))) {
+        if (_electrician->repair(_flashlight)) {
             LOG("Лампочка починена");
 
             LOG("Включение лампочки");
@@ -20,7 +20,7 @@ void grandma::turn_on_lights() {
             _electrician->take_chair(this->give_chair());
 
             LOG("Электрик второй раз пытается починить лампочку");
-            if (_electrician->repair(dynamic_cast<IRepairable*>(_flashlight))) {
+            if (_electrician->repair(_flashlight)) {
                 LOG("Лампочка починена");
 
                 LOG("Включение лампочки");

@@ -1,8 +1,9 @@
 #include "electrician.hpp"
 
-bool electrician::repair(IRepairable* flashlight) {
-    if (this->_height >= flashlight->height()) {
-        flashlight->repair();
+bool electrician::repair(ILightable* flashlight) {
+    auto repairable = _manual[flashlight];
+    if (this->_height >= repairable->height()) {
+        repairable->repair();
         return true;
     }
     return false;

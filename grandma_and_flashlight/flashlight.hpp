@@ -10,6 +10,8 @@ class flashlight : public ILightable, public IRepairable {
    public:
     flashlight() = default;
     flashlight(int height) : _height(height) {}
+    flashlight(bool works) : _works(works) {}
+    flashlight(int height, bool works) : _height(height), _works(works) {}
 
     virtual int height() override;
     virtual bool turn_on() override;
