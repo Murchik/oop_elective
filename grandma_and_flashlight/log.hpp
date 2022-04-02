@@ -1,7 +1,7 @@
 #ifndef LOG_HPP
 #define LOG_HPP
 
-#include <iostream>
+#include <string>
 
 void log_to_console(const std::string& str);
 

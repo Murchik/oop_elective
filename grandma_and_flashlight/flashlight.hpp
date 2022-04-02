@@ -1,8 +1,6 @@
 #ifndef FLASHLIGHT_HPP
 #define FLASHLIGHT_HPP
 
-// #include <iostream>
-
 #include "ILightable.hpp"
 #include "IRepairable.hpp"
 
